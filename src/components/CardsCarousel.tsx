@@ -79,10 +79,7 @@ export function CardsCarousel() {
   ));
 
   return (
-    <Container fluid mb={15}>s
-        <Title className={classes.titletwo} order={2}>
-        PharmLand is <span className={classes.highlight}>not</span> just for pharmacists
-      </Title>
+    <Container fluid mb={15}>
         <Carousel
         slideSize={{ base: '100%', sm: '70%' }}
         slideGap={{ base: '15px', sm: '15px' }}

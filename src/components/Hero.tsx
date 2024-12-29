@@ -1,35 +1,52 @@
-import { Button, Container, Overlay, Text, Title } from '@mantine/core';
-import classes from './Hero.module.scss';
+import { IconCheck } from '@tabler/icons-react';
+import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
+import classes from './Hero.module.css';
 
 export function Hero() {
   return (
-    <div className={classes.hero}>
-      <Overlay
-        gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 40%)"
-        opacity={1}
-        zIndex={0}
-      />
-      <Container className={classes.container} size="md">
-      <Title className={classes.title}>
-            <Text
-                className={classes.title}
-                variant="gradient"
-                gradient={{ from: 'Yellow', to: 'cyan', deg: 90 }}
-                component="span"  // Ensure this stays inline
-            >
-                Transform
-            </Text>
-            <Text className={classes.title} component="span"> Your Space with Trusted Painting Experts</Text>  {/* Keep this inline */}
-        </Title>
-        <Text className={classes.description} size="xl" mt="xl">
-        Expert painting, renovation, and repair services to enhance your space. Quality work, on time, 
-        every time. Get your quote today!
-        </Text>
+    <Container size="lg">
+      <div className={classes.inner}>
+        <div className={classes.content}>
+          <Title className={classes.title}>
+            Let's <span className={classes.highlight}>transform your space</span> with
+            trusted painting experts
+          </Title>
+          <Text c="dimmed" mt="md">
+          Quality work, on time, every time. 
+          </Text>
 
-        <Button variant="gradient" size="xl" radius="xl" className={classes.control}>
-          Get started
-        </Button>
-      </Container>
-    </div>
+          <List
+            mt={30}
+            spacing="sm"
+            size="sm"
+            icon={
+              <ThemeIcon size={20} radius="xl">
+                <IconCheck size={12} stroke={1.5} />
+              </ThemeIcon>
+            }
+          >
+            <List.Item>
+              <b>TypeScript based</b> – build type safe applications, all components and hooks
+              export types
+            </List.Item>
+            <List.Item>
+              <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
+              any project
+            </List.Item>
+            <List.Item>
+              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
+              keyboard
+            </List.Item>
+          </List>
+
+          <Group mt={30}>
+            <Button radius="xl" size="md" className={classes.control}>
+              Get a quote!
+            </Button>
+          </Group>
+        </div>
+        <Image src="/painting.png" className={classes.image} />
+      </div>
+    </Container>
   );
 }

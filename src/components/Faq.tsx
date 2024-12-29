@@ -7,7 +7,15 @@ const placeholder =
 export function Faq() {
   return (
     <div className={classes.wrapper}>
-      <Container size="md">
+      <Container 
+        size="lg"
+        my={
+          {
+            base: 0,
+            md: 100
+          }
+        }
+      >
         <Grid id="faq-grid" gutter={50}>
           <Grid.Col span={{ base: 12, md: 6 }}>
             <Image src="/image.svg" alt="Frequently Asked Questions" />
