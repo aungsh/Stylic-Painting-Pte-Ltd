@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <MantineProvider>
+      <MantineProvider defaultColorScheme="light">
         <Header />
         <Hero />
         {/* <Features /> */}

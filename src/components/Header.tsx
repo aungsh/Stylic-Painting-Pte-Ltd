@@ -1,6 +1,16 @@
 import { useState } from 'react';
-import { Burger, Container, Group, Text } from '@mantine/core';
+import {
+  Burger,
+  Container,
+  Group,
+  Text,
+  ActionIcon,
+  useMantineColorScheme,
+  Drawer,
+  Stack
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { IconSun, IconMoonStars } from '@tabler/icons-react';
 import classes from './Header.module.css';
 
 const links = [
@@ -11,8 +21,13 @@ const links = [
 ];
 
 export function Header() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
+  const { colorScheme, setColorScheme } = useMantineColorScheme();
+
+  const toggleColorScheme = () => {
+    setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
+  };
 
   const items = links.map((link) => (
     <a
@@ -23,6 +38,7 @@ export function Header() {
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
+        close();
       }}
     >
       {link.label}
@@ -30,15 +46,62 @@ export function Header() {
   ));
 
   return (
-    <header className={classes.header}>
-      <Container size="lg" className={classes.inner}>
-      <Text fw={700} size="lg">Stylic Painting Pte Ltd</Text>
-        <Group gap={5} visibleFrom="xs">
-          {items}
-        </Group>
+    <>
+      <header className={classes.header}>
+        <Container size="lg" className={classes.inner}>
+          <Text fw={700} size="lg">Stylic Painting Pte Ltd</Text>
+          <Group gap={5} visibleFrom="xs">
+            {items}
+            <ActionIcon
+              variant="default"
+              onClick={toggleColorScheme}
+              size="lg"
+              aria-label="Toggle color scheme"
+            >
+              {colorScheme === 'dark' ? (
+                <IconSun size={20} stroke={1.5} />
+              ) : (
+                <IconMoonStars size={20} stroke={1.5} />
+              )}
+            </ActionIcon>
+          </Group>
+          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        </Container>
+      </header>
 
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-      </Container>
-    </header>
+      <Drawer
+        opened={opened}
+        onClose={close}
+        size="100%"
+        padding="md"
+        hiddenFrom="xs"
+        zIndex={1000}
+        withCloseButton={false}
+      >
+        <Stack gap="lg">
+          <Group justify="space-between" mb="xl">
+            <Text fw={700} size="lg">Stylic Painting Pte Ltd</Text>
+            <Group>
+              <ActionIcon
+                variant="default"
+                onClick={toggleColorScheme}
+                size="lg"
+                aria-label="Toggle color scheme"
+              >
+                {colorScheme === 'dark' ? (
+                  <IconSun size={20} stroke={1.5} />
+                ) : (
+                  <IconMoonStars size={20} stroke={1.5} />
+                )}
+              </ActionIcon>
+              <Burger opened={opened} onClick={close} size="sm" />
+            </Group>
+          </Group>
+          <Stack gap="sm">
+            {items}
+          </Stack>
+        </Stack>
+      </Drawer>
+    </>
   );
 }
