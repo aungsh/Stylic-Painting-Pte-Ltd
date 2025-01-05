@@ -2,8 +2,8 @@
     min-height: 400px;
     background-image: linear-gradient(
       -60deg,
-      var(--mantine-color-blue-4) 0%,
-      var(--mantine-color-blue-7) 100%
+      var(--mantine-color-teal-4) 0%,
+      var(--mantine-color-blue-5) 100%
     );
     border-radius: var(--mantine-radius-md);
     padding: calc(var(--mantine-spacing-xl) * 2.5);

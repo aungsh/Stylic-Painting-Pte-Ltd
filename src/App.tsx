@@ -21,6 +21,7 @@ function App() {
         <CardsCarousel />
         <Grids />
         <Faq />
+        <div id='contactsection'> </div>
         <ContactUs />
         <FooterLinks />
       </MantineProvider>

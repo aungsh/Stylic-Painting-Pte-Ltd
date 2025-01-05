@@ -1,4 +1,10 @@
-import { IconAt, IconMapPin, IconPhone, IconSun } from '@tabler/icons-react';
+import { 
+  // IconAt, 
+  IconMapPin, 
+  IconPhone, 
+  IconSun,
+  IconBrandFacebook
+} from '@tabler/icons-react';
 import { Box, Stack, Text } from '@mantine/core';
 import classes from './ContactIcons.module.css';
 
@@ -26,10 +32,11 @@ function ContactIcon({ icon: Icon, title, description, ...others }: ContactIconP
 }
 
 const MOCKDATA = [
-  { title: 'Email', description: 'hello@mantine.dev', icon: IconAt },
-  { title: 'Phone', description: '+49 (800) 335 35 35', icon: IconPhone },
-  { title: 'Address', description: '844 Morris Park avenue', icon: IconMapPin },
-  { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: IconSun },
+  // { title: 'Email', description: 'email@mail.com', icon: IconAt },
+  { title: 'Phone / Whatsapp', description: '+65 9468 6704', icon: IconPhone },
+  { title: 'Address', description: '111 NORTH BRIDGE ROAD, #04-06, PENINSULA PLAZA, SINGAPORE 179098', icon: IconMapPin },
+  { title: 'Working hours', description: '8 a.m. – 6 p.m.', icon: IconSun },
+  { title: 'Facebook', description: 'https://www.facebook.com/StylicPainting/', icon: IconBrandFacebook },
 ];
 
 export function ContactIconsList() {

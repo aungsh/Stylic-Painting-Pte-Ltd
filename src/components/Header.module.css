@@ -33,3 +33,9 @@
     color: var(--mantine-color-white);
   }
 }
+
+.headerTitle {
+  font-family: 'Algerian Mesa W00 Regular', sans-serif;
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: 700; /* Ensure bold weight matches */
+}

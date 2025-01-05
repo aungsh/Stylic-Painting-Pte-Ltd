@@ -7,7 +7,8 @@ import {
   ActionIcon,
   useMantineColorScheme,
   Drawer,
-  Stack
+  Stack,
+  Image
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
@@ -49,7 +50,10 @@ export function Header() {
     <>
       <header className={classes.header}>
         <Container size="lg" className={classes.inner}>
-          <Text fw={700} size="lg">Stylic Painting Pte Ltd</Text>
+          {/* <Text className={classes.headerTitle} size="xl">Stylic Painting Pte Ltd</Text> */}
+          <Image 
+          src="stylic_header.svg"
+          />
           <Group gap={5} visibleFrom="xs">
             {items}
             <ActionIcon

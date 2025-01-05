@@ -1,5 +1,5 @@
 import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
-import { ActionIcon, Container, Group, Text } from '@mantine/core';
+import { ActionIcon, Container, Group, Text, Image } from '@mantine/core';
 import classes from './FooterLinks.module.css';
 
 const data = [
@@ -56,18 +56,22 @@ export function FooterLinks() {
 
   return (
     <footer className={classes.footer}>
-      <Container className={classes.inner}>
+      <Container className={classes.inner} size={'lg'}>
         <div className={classes.logo}>
           {/* <MantineLogo size={30} /> */}
+          <Image 
+          src="stylic_logo.svg"
+          />
+          <br></br>
           <Text size="xs" c="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            Professional Painting Services.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
-      <Container className={classes.afterFooter}>
+      <Container className={classes.afterFooter} size={'lg'}>
         <Text c="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © 2025 stylicpainting.sg. All rights reserved.
         </Text>
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">

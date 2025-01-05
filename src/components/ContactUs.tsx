@@ -1,6 +1,4 @@
-import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
 import {
-  ActionIcon,
   Button,
   Group,
   SimpleGrid,
@@ -13,57 +11,55 @@ import {
 import classes from './ContactUs.module.css';
 import { ContactIconsList } from './ContactIcons';
 
-const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
-
 export function ContactUs() {
-  const icons = social.map((Icon, index) => (
-    <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
-      <Icon size={22} stroke={1.5} />
-    </ActionIcon>
-  ));
-
   return (
     <Container fluid>
-    <div className={classes.wrapper}>
-      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
-        <div>
-          <Title className={classes.title}>Contact us</Title>
-          <Text className={classes.description} mt="sm" mb={30}>
-            Leave your email and we will get back to you within 24 hours
-          </Text>
+      <div className={classes.wrapper}>
+        <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
+          <div>
+            <Title className={classes.title}>Contact us</Title>
+            <Text className={classes.description} mt="sm" mb={30}>
+              Contact us on WhatsApp and we will get back to you within 24 hours!
+            </Text>
 
-          <ContactIconsList />
+            <ContactIconsList />
+          </div>
+          <div className={classes.form}>
+            <TextInput
+              label="Email"
+              placeholder="your@email.com"
+              required
+              classNames={{ input: classes.input, label: classes.inputLabel }}
+            />
+            <TextInput
+              label="Phone"
+              placeholder="91234 5678"
+              mt="md"
+              required
+              classNames={{ input: classes.input, label: classes.inputLabel }}
+            />
+            <TextInput
+              label="Name"
+              placeholder="John Doe"
+              mt="md"
+              required
+              classNames={{ input: classes.input, label: classes.inputLabel }}
+            />
+            <Textarea
+              required
+              label="Description"
+              placeholder="Address of painting location, important details"
+              minRows={4}
+              mt="md"
+              classNames={{ input: classes.input, label: classes.inputLabel }}
+            />
 
-          <Group mt="xl">{icons}</Group>
-        </div>
-        <div className={classes.form}>
-          <TextInput
-            label="Email"
-            placeholder="your@email.com"
-            required
-            classNames={{ input: classes.input, label: classes.inputLabel }}
-          />
-          <TextInput
-            label="Name"
-            placeholder="John Doe"
-            mt="md"
-            classNames={{ input: classes.input, label: classes.inputLabel }}
-          />
-          <Textarea
-            required
-            label="Your message"
-            placeholder="I want to order your goods"
-            minRows={4}
-            mt="md"
-            classNames={{ input: classes.input, label: classes.inputLabel }}
-          />
-
-          <Group justify="flex-end" mt="md">
-            <Button className={classes.control}>Send message</Button>
-          </Group>
-        </div>
-      </SimpleGrid>
-    </div>
+            <Group justify="flex-end" mt="md">
+              <Button className={classes.control}>Send message</Button>
+            </Group>
+          </div>
+        </SimpleGrid>
+      </div>
     </Container>
   );
 }
