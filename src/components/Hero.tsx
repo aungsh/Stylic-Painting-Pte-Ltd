@@ -15,7 +15,7 @@ export function Hero() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            <span className={classes.highlight}>Quality Work.</span>
+            <span className={classes.highlight}>Quality Work. </span>
             On Time.
             Every Time.
             {/* Let's <span className={classes.highlight}>transform your space</span> with

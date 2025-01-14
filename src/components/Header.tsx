@@ -4,31 +4,29 @@ import {
   Container,
   Group,
   Text,
-  ActionIcon,
-  useMantineColorScheme,
+  // ActionIcon,
+  // useMantineColorScheme,
   Drawer,
   Stack,
   Image
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconSun, IconMoonStars } from '@tabler/icons-react';
+// import { IconSun, IconMoonStars } from '@tabler/icons-react';
 import classes from './Header.module.css';
 
 const links = [
   { link: '/', label: 'Home' },
   { link: '/pricing', label: 'Pricing' },
-  { link: '/projects', label: 'Projects' },
-  { link: '/acout', label: 'About Us' },
 ];
 
 export function Header() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
-  const { colorScheme, setColorScheme } = useMantineColorScheme();
+  // const { colorScheme, setColorScheme } = useMantineColorScheme();
 
-  const toggleColorScheme = () => {
-    setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
-  };
+  // const toggleColorScheme = () => {
+  //   setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
+  // };
 
   const items = links.map((link) => (
     <a
@@ -56,7 +54,7 @@ export function Header() {
           />
           <Group gap={5} visibleFrom="xs">
             {items}
-            <ActionIcon
+            {/* <ActionIcon
               variant="default"
               onClick={toggleColorScheme}
               size="lg"
@@ -67,7 +65,7 @@ export function Header() {
               ) : (
                 <IconMoonStars size={20} stroke={1.5} />
               )}
-            </ActionIcon>
+            </ActionIcon> */}
           </Group>
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
         </Container>
@@ -86,7 +84,7 @@ export function Header() {
           <Group justify="space-between" mb="xl">
             <Text fw={700} size="lg">Stylic Painting Pte Ltd</Text>
             <Group>
-              <ActionIcon
+              {/* <ActionIcon
                 variant="default"
                 onClick={toggleColorScheme}
                 size="lg"
@@ -97,7 +95,7 @@ export function Header() {
                 ) : (
                   <IconMoonStars size={20} stroke={1.5} />
                 )}
-              </ActionIcon>
+              </ActionIcon> */}
               <Burger opened={opened} onClick={close} size="sm" />
             </Group>
           </Group>

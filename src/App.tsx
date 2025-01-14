@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 // import { Features } from './components/Features';
-import { Grids } from './components/Grids';
+// import { Grids } from './components/Grids';
 import { ContactUs } from './components/ContactUs';
 import { Faq } from './components/Faq';
 import { FooterLinks } from './components/FooterLinks';
@@ -19,7 +19,7 @@ function App() {
         <Hero />
         {/* <Features /> */}
         <CardsCarousel />
-        <Grids />
+        {/* <Grids /> */}
         <Faq />
         <div id='contactsection'> </div>
         <ContactUs />
